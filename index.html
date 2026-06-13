@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Warplitzer — Experimental multi-transfer vinyl restoration</title>
+  <meta name="description" content="Warplitzer is an experimental audio restoration project exploring how multiple vinyl transfers can be aligned and combined to reduce clicks, crackle, surface noise, wow, flutter, and playback variation.">
+
+  <link rel="canonical" href="https://its-not-rocket-science.github.io/warplitzer/">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:site_name" content="Warplitzer">
+  <meta property="og:title" content="Warplitzer — Experimental multi-transfer vinyl restoration">
+  <meta property="og:description" content="An experimental audio restoration project exploring how multiple vinyl transfers can be aligned and combined to reduce clicks, crackle, surface noise, wow, flutter, and playback variation.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://its-not-rocket-science.github.io/warplitzer/">
+  <meta property="og:image" content="https://its-not-rocket-science.github.io/warplitzer/warplitzer-social-media-preview.png">
+  <meta property="og:image:secure_url" content="https://its-not-rocket-science.github.io/warplitzer/warplitzer-social-media-preview.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Art Deco and Art Nouveau social preview artwork for Warplitzer, showing a glowing vintage jukebox, vinyl records, waveforms, and restoration motifs.">
+  <meta property="og:locale" content="en_GB">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Warplitzer — Experimental multi-transfer vinyl restoration">
+  <meta name="twitter:description" content="Combining multiple vinyl transfers to investigate better restoration of clicks, crackle, surface noise, wow, flutter, and playback variation.">
+  <meta name="twitter:image" content="https://its-not-rocket-science.github.io/warplitzer/warplitzer-social-media-preview.png">
+  <meta name="twitter:image:alt" content="Art Deco and Art Nouveau social preview artwork for Warplitzer, showing a glowing vintage jukebox, vinyl records, waveforms, and restoration motifs.">
+
+  <!-- Basic browser theming -->
+  <meta name="theme-color" content="#10251f">
+
+  <style>
+    :root {
+      --bg: #0f211c;
+      --panel: #172d26;
+      --text: #f7ead0;
+      --muted: #d8c093;
+      --gold: #d9a84e;
+      --accent: #b85b38;
+      --line: rgba(217, 168, 78, 0.45);
+      --max-width: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(217, 168, 78, 0.16), transparent 32rem),
+        radial-gradient(circle at bottom right, rgba(184, 91, 56, 0.18), transparent 30rem),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.2em;
+    }
+
+    a:hover {
+      color: #f2ca77;
+    }
+
+    .page {
+      width: min(100% - 2rem, var(--max-width));
+      margin: 0 auto;
+      padding: 3rem 0 4rem;
+    }
+
+    .hero {
+      display: grid;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .preview {
+      width: 100%;
+      border-radius: 1.2rem;
+      border: 1px solid var(--line);
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.35);
+      background: #08120f;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.6rem;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 10vw, 6.8rem);
+      line-height: 0.92;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      text-shadow: 0 0.08em 0 rgba(0, 0, 0, 0.35);
+    }
+
+    .subtitle {
+      max-width: 46rem;
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font-size: clamp(1.15rem, 2.8vw, 1.55rem);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.6rem;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(217, 168, 78, 0.1);
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .button.primary {
+      background: var(--gold);
+      color: #1b1208;
+      border-color: var(--gold);
+      font-weight: bold;
+    }
+
+    section {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0 0 1rem;
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      line-height: 1.1;
+    }
+
+    p {
+      max-width: 44rem;
+      margin: 0 0 1rem;
+    }
+
+    ul {
+      max-width: 44rem;
+      padding-left: 1.2rem;
+    }
+
+    li + li {
+      margin-top: 0.35rem;
+    }
+
+    .status {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.35rem 0.65rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header class="hero">
+      <img
+        class="preview"
+        src="./warplitzer-social-media-preview.png"
+        width="1200"
+        height="630"
+        alt="Warplitzer social preview artwork showing a glowing vintage jukebox, vinyl records, waveforms, and restoration motifs."
+      >
+
+      <div>
+        <p class="eyebrow">Experimental audio restoration</p>
+        <h1>Warplitzer</h1>
+        <p class="subtitle">
+          Multi-transfer vinyl restoration: combining repeated or differently captured record transfers to investigate cleaner, more reliable audio recovery.
+        </p>
+
+        <div class="actions">
+          <a class="button primary" href="https://github.com/its-not-rocket-science/warplitzer">View on GitHub</a>
+          <a class="button" href="https://github.com/its-not-rocket-science/warplitzer#readme">Read the README</a>
+        </div>
+
+        <span class="status">Status: early research prototype</span>
+      </div>
+    </header>
+
+    <section>
+      <h2>What is Warplitzer?</h2>
+      <p>
+        Warplitzer explores a simple idea: every playback of a vinyl record is a slightly different observation of the same underlying signal.
+      </p>
+      <p>
+        A click may appear in one transfer and not another. A warp may distort one pass differently from the next. A stylus, cartridge, or playback speed may reveal different information about the same groove.
+      </p>
+      <p>
+        Warplitzer treats multiple transfers as independent observations, then investigates how they can be aligned and combined to separate shared musical content from pass-specific defects.
+      </p>
+    </section>
+
+    <section>
+      <h2>What it aims to improve</h2>
+      <ul>
+        <li>Clicks, pops, and transient defects.</li>
+        <li>Crackle and surface noise.</li>
+        <li>Wow, flutter, and speed variation.</li>
+        <li>Warp-induced timing errors.</li>
+        <li>Tracking variation between different playback passes.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Technical direction</h2>
+      <p>
+        The project is expected to combine FFT-based analysis, cross-correlation, dynamic time warping, phase-aware alignment, robust averaging, outlier rejection, and optional machine-learning approaches.
+      </p>
+      <p>
+        It is not a finished restoration application yet. It is a research prototype for testing whether multi-transfer reconstruction can recover better audio than a single pass alone.
+      </p>
+    </section>
+
+    <footer>
+      <p>
+        Warplitzer is maintained by
+        <a href="https://github.com/its-not-rocket-science">its-not-rocket-science</a>.
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
